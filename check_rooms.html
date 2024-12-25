@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Available Rooms</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; text-align: center; }
+        table { width: 60%; margin: 20px auto; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #ddd; }
+        th { background-color: #f2f2f2; }
+        button { padding: 10px 20px; cursor: pointer; background-color: #4CAF50; color: white; border: none; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h2>Check Available Rooms</h2>
+    <!-- Form to Check Available Rooms -->
+    <form method="POST">
+        <button type="submit">Show Available Rooms</button>
+    </form>
+
+    <!-- Display Available Rooms -->
+    {% if rooms %}
+    <h3>Available Rooms:</h3>
+    <table>
+        <tr>
+            <th>Room Number</th>
+            <th>Category</th>
+        </tr>
+        {% for room in rooms %}
+        <tr>
+            <td>{{ room.room_number }}</td>
+            <td>{{ room.category }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No rooms available.</p>
+    {% endif %}
+</body>
+</html>

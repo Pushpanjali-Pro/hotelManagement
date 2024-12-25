@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Rooms</title>
+</head>
+<body>
+    <h2>Available Rooms</h2>
+    <table border="1">
+        <tr>
+            <th>Room Number</th>
+            <th>Category</th>
+            <th>Floor</th>
+            <th>Price</th>
+        </tr>
+        {% for room in rooms %}
+        <tr>
+            <td>{{ room.room_number }}</td>
+            <td>{{ room.category }}</td>
+            <td>{{ room.floor_number }}</td>
+            <td>{{ room.price }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

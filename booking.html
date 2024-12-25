@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .form-container {
+            width: 50%;
+            padding: 30px;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-container input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-container button:hover {
+            background-color: #218838;
+        }
+
+        .image-container {
+            width: 50%;
+            background-image: url('your-image-url.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+        }
+
+        .message-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .flash-message {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .flash-message li {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Side: Form -->
+        <div class="form-container">
+            <h1>Room Booking</h1>
+
+            <!-- Display Registration Details (Name and Email) -->
+            {% if name %}
+                <p>Welcome, {{ name }}! You are logged in with email: {{ email }}</p>
+            {% else %}
+                <p>Please register first.</p>
+            {% endif %}
+
+            <!-- Booking Form -->
+            <form action="/booking" method="POST">
+                <label for="Customer_id">Customer ID:</label>
+                <input type="text" id="Customer_id" name="Customer_id" required><br>
+
+                <label for="Full_name">Full Name:</label>
+                <input type="text" id="Full_name" name="Full_name" value="{{ name }}" required><br>
+
+                <label for="Email">Email:</label>
+                <input type="email" id="Email" name="Email" value="{{ email }}" required><br>
+
+                <label for="Check_in">Check-in Date:</label>
+                <input type="date" id="Check_in" name="Check_in" required><br>
+
+                <label for="Check_out">Check-out Date:</label>
+                <input type="date" id="Check_out" name="Check_out" required><br>
+
+                <button type="submit">Book Now</button>
+            </form>
+
+            <!-- Display Success or Error Message -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="message-container">
+                        <ul class="flash-message">
+                            {% for category, message in messages %}
+                                <li class="{{ category }}">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        <!-- Right Side: Image -->
+        <div class="image-container">
+            <!-- The background image is set in CSS -->
+        </div>
+    </div>
+
+</body>
+</html>

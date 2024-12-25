@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Room Availability</title>
+</head>
+<body>
+    <h2>Check Room Availability</h2>
+    <form method="POST">
+        <label>Check-In Date:</label>
+        <input type="date" name="check_in_date" required><br><br>
+        
+        <label>Check-Out Date:</label>
+        <input type="date" name="check_out_date" required><br><br>
+        
+        <button type="submit">Check Availability</button>
+    </form>
+
+    {% if rooms %}
+        <h3>Available Rooms:</h3>
+        <table border="1">
+            <tr>
+                <th>Room Number</th>
+                <th>Type</th>
+                <th>Price</th>
+            </tr>
+            {% for room in rooms %}
+            <tr>
+                <td>{{ room['room_number'] }}</td>
+                <td>{{ room['room_type'] }}</td>
+                <td>{{ room['price'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% elif rooms is not none %}
+        <p>No rooms available for the selected dates.</p>
+    {% endif %}
+</body>
+</html>

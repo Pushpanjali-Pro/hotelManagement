@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*this is login -container whole access of this div because it contains inputs*/
+
+.login-container {
+    background: linear-gradient(135deg, rgb(13, 150, 214), rgb(255, 183, 77));
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.login-container {
+    background: linear-gradient(135deg, rgb(6, 160, 207), rgba(255, 255, 255, 0.1));
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+    /* Pehle se animation */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.input-container {
+    display: flex;
+    /* Flexbox ka use karte hue icon aur input ko align kare */
+    align-items: center;
+    /* Vertically center karne ke liye */
+}
+
+.input-container i {
+    margin-right: 10px;
+    /* Icon aur input ke beech me spacing */
+    font-size: 20px;
+    /* Icon ka size (optional) */
+    color: #000;
+    /* Icon ka color (optional) */
+}
+
+input[type="text"] {
+    padding: 10px;
+    /* Input padding */
+    border: 1px solid #ccc;
+    /* Input border */
+    border-radius: 4px;
+    /* Input border radius */
+    width: 100%;
+    /* Input width */
+}
+
+
+/* Jab mouse aaye tab zoom ho */
+
+.login-container:hover {
+    transform: scale(1.1);
+    /* 10% zoom */
+}
+
+
+/*this is body of Hotel main control Here*/
+
+body {
+    background-color: salmon;
+    height: 100vh;
+    background-image: url("https://images.pexels.com/photos/7820327/pexels-photo-7820327.jpeg?auto=compress&cs=tinysrgb&dpr=2");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(250, 252, 247);
+}
+
+
+/*this is overall hotel name heading h2*/
+
+.hotel-name {
+    font-size: 4rem;
+    font-family: 'Arial', sans-serif;
+    position: absolute;
+    top: 20px;
+    /* Adjust the distance from the top */
+    right: 50%;
+    transform: translateX(-50%);
+    animation: colorChange 5s infinite;
+}
+
+
+/* for effect of hotel-name*/
+
+@keyframes colorChange {
+    0% {
+        color: #ff0000;
+        /* Red */
+        transform: scale(1);
+    }
+    50% {
+        color: yellow;
+        /* Green */
+        transform: scale(1.2);
+    }
+    100% {
+        color: #0000ff;
+        /* Blue */
+        transform: scale(1);
+    }
+}
+
+.login-container h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: yellow;
+}
+
+.login-container .input-field {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.login-container .input-field input {
+    width: 100%;
+    padding: 23px;
+    background: linear-gradient(135deg, rgba(243, 243, 243, 0.7), rgba(245, 241, 241, 0.1));
+    border: none;
+    border-radius: 8px;
+    color: black;
+    font-size: 16px;
+}
+
+.login-container .input-field input:focus {
+    outline: none;
+    background-color: #020f1f;
+}
+
+.login-container .input-field i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFD700;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FFD700;
+    color: #0A0F27;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #E0B400;
+}
+
+.login-container p a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+.login-container p a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

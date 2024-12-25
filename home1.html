@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar with Header Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #d3d3d3;
+        }
+        
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            background-color: #333;
+            padding-top: 20px;
+        }
+        
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        
+        .content {
+            margin-left: 250px;
+            margin-top: 60px;
+            padding: 20px;
+        }
+        
+        .rooms {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .rm-card {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        
+        .rm-card img {
+            width: 300px;
+            height: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid red;
+        }
+        
+        .check-status-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .check-status-btn:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        My Website Header
+    </div>
+    <div class="sidebar">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="content">
+        <h1>Rooms Availability</h1>
+        <div class="rooms">
+            <div class="rm-card">
+                <img src="images/hotel6.jpg" alt="Suite Room">
+                <h3>Suite Room</h3>
+                <p>$250 per night</p>
+                <button class="check-status-btn">Check Status</button>
+            </div>
+            <div class="rm-card">
+                <img src="images/hotel7.jpg" alt="Deluxe Room">
+                <h3>Deluxe Room</h3>
+                <p>$150 per night</p>
+                <button class="check-status-btn">Check Status</button>
+            </div>
+            <div class="rm-card">
+                <img src="images/hotel9.jpg" alt="Standard Room">
+                <h3>Standard Room</h3>
+                <p>$100 per night</p>
+                <button class="check-status-btn">Check Status</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

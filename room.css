@@ -1,0 +1,22 @@
+.room-detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: left;
+}
+
+.room-detail-table th,
+.room-detail-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.room-detail-table th {
+    background-color: #333;
+    color: #fff;
+}
+
+.room-detail-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
